@@ -1,11 +1,11 @@
 ---
 - name: REMOVE LOOPBACK INTERFACE
-  hosts: reserved
+  hosts: iosxe_reserved
   gather_facts: no
   connection: local
 
   tasks:
   - name: Delete loopback
     ios_interface:
-      name: Loopback0
+      name: Loopback10
       state: absent

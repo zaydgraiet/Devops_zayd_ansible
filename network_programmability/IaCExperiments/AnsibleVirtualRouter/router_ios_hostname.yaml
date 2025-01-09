@@ -1,6 +1,6 @@
 ---
 - name: CONFIGURE DEVICE HOSTNAME
-  hosts: csr
+  hosts: iosxe_reserved
   gather_facts: false
   connection: local
   become: yes
@@ -9,4 +9,4 @@
   tasks:
   - name: update hostname
     ios_system:
-      hostname: "CSR-virtual"
+      hostname: "iosxe_reserved-virtual"

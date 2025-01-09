@@ -1,6 +1,6 @@
 ---
 - name: INTERFACE ADDRESSING 
-  hosts: sandbox
+  hosts: iosxr_reserved
   gather_facts: false
   connection: local
 

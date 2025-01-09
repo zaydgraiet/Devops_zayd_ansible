@@ -1,9 +1,9 @@
 ---
 
 - name: Disable CDP
-  hosts: routers
+  hosts: iosxe_reserved
   gather_facts: false
-  connection: network_cli
+  connection: local
 
   tasks:
     - name: Disable CDP on routers

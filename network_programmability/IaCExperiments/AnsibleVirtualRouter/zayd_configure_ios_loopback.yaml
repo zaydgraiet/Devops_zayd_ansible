@@ -1,0 +1,31 @@
+---
+- name: CREATE LOOPBACK INTERFACE
+  hosts: iosxe_reserved  # Target hosts
+  gather_facts: False  # Skip gathering facts
+  connection: local
+  become: yes  # Enable privilege escalation
+  become_method: enable  # Use 'enable' mode for privilege escalation
+
+  tasks:
+    - name: Create loopback interface
+      ios_interface:
+        name: Loopback2  # Naam van de loopback interface
+        enabled: True 
+        description: Loopback interface 2 created with Ansible
+
+    - name: IPv4 address voor loopback
+      ios_l3_interface:
+        name: Loopback2
+        ipv4: 10.0.15.11/32  # IPv4 address 
+
+    - name: Eerste IPv6 address 
+      ios_l3_interface:
+        name: Loopback2
+        ipv6: 2001:db8::1511/128
+
+
+    - name: Tweede IPv6 address 
+      ios_l3_interface:
+        name: Loopback2
+        ipv6: 2001:db8::1512/128
+          
