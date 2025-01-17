@@ -12,8 +12,8 @@ DNAC_port=":443"
 DNAC_path_token="/dna/system/api/v1/auth/token"
 DNAC_path="/dna/intent/api/v1/network-device"
 #### IT IS NECESSARY TO HAVE A USERNAME AND PASSWORD
-DNAC_user = "devnetuser"
-DNAC_psw = "Cisco123!"
+DNAC_user = "dnaczaydusername"
+DNAC_psw = "zaydgpsswdS!"
 #REQUEST TOKEN BASED ON devnetuser Cisco123!
 token_req_url = DNAC_scheme+DNAC_authority+DNAC_path_token
 auth = (DNAC_user, DNAC_psw)
@@ -44,3 +44,6 @@ for device in resp_devices_json['response']:
         print('Hostname: ' + device['hostname'])
         print('Type: ' + device['type'])
         print('IP: ' + device['managementIpAddress'])
+        print('MAC: ' + device['macAddress'])
+        print('SerialNumber: ' + device['serialNumber'])
+
